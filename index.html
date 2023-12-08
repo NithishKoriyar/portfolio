@@ -21,7 +21,6 @@
         color: #fff;
         margin: 0%;
         padding: 0%;
-        
       }
       body::-webkit-scrollbar {
         width: 1px;
@@ -161,43 +160,51 @@
 
         filter: drop-shadow(-3px -3px rgb(27, 255, 73));
       }
-      .skill_container{
+      .skill_container {
         height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
       }
-      .skill_container center{
+      .skill_container center {
         margin: 20px;
         font-size: 40px;
         font-weight: 600;
-        color:  rgb(27, 255, 73);
+        color: rgb(27, 255, 73);
         text-shadow: 0 0 20px rgb(27, 255, 73);
-
-
       }
-      .skill_container .devs{
+      .skill_container .devs {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        gap:10px
+        gap: 10px;
       }
-      .skill_container .devs div{
+      .skill_container .devs div {
         display: flex;
         align-items: center;
         justify-content: center;
-        width:200px;
+        width: 200px;
         padding: 10px;
         border-radius: 10px;
         font-weight: 600;
         color: #1f252e;
         background-color: rgb(27, 255, 73);
         box-shadow: 0 0 20px rgb(27, 255, 73);
-       
       }
-
+      .skill_container .lang_knows {
+        margin-top: 2%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      .skill_container .lang_knows img{
+        filter: drop-shadow(0px 0px 30px  rgb(27, 255, 73));
+        
+        
+      }
 
       @keyframes check {
         0% {
@@ -267,10 +274,9 @@
       }
       @media only screen and (max-width: 440px) {
         .home_container .image_Container > div {
-    height: 300px;
-    width: 300px;
-}
-
+          height: 300px;
+          width: 300px;
+        }
       }
     </style>
   </head>
@@ -288,7 +294,7 @@
       <nav>
         <a href="#home">Home</a>
         <a href="#About">About</a>
-        <a href="#">Skills</a>
+        <a href="#skills">Skills</a>
         <a href="#">Portfolio</a>
         <a href="#">Contact</a>
       </nav>
@@ -316,35 +322,51 @@
         </div>
       </div>
     </div>
-    <div class="skill_container">
+    <div class="skill_container" id="skills">
       <center>Skills</center>
       <div class="devs">
         <div class="website">
           <div>
-            <img src="./assets/images/icons8-website-64.png" alt="" srcset="">
+            <img src="./assets/images/icons8-website-64.png" alt="" srcset="" />
           </div>
           <span>website</span>
         </div>
         <div class="webapps">
           <div>
-            <img src="./assets/images/icons8-web-64.png" alt="" srcset="">
+            <img src="./assets/images/icons8-web-64.png" alt="" srcset="" />
           </div>
           <span>Web Application</span>
         </div>
         <div class="mobile">
           <div>
-           <img src="./assets/images/icons8-android-64.png" alt="">
+            <img src="./assets/images/icons8-android-64.png" alt="" />
           </div>
           <span>Android Development</span>
         </div>
         <div class="ios">
           <div>
-            <img src="./assets/images/icons8-apple-logo-64.png" alt="" srcset="">
+            <img
+              src="./assets/images/icons8-apple-logo-64.png"
+              alt=""
+              srcset=""
+            />
           </div>
           <span>IOS Development</span>
         </div>
       </div>
-      <div class="lang_knows"></div>
+      <div class="lang_knows">
+        <img src="./assets/images/icons8-html5-64.png" alt="">
+        <img src="./assets/images/icons8-css-64.png" alt="">
+        <img src="./assets/images/icons8-js-64.png" alt="">
+        <img src="./assets/images/icons8-php-64.png" alt="">
+        <img src="./assets/images/icons8-node-js-64.png" alt="">
+        <img src="./assets/images/icons8-express-js-64.png" alt="">
+        <img src="./assets/images/icons8-flutter-64.png" alt="">
+        <img src="./assets/images/icons8-dart-64.png" alt="">
+        <img src="./assets/images/icons8-rest-api-64.png" alt="">
+        <img src="./assets/images/icons8-my-sql-64.png" alt="">
+
+      </div>
     </div>
   </body>
 </html>
