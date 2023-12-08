@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nithish</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <style>
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+        background-color: #0a0e13;
+        color: #fff;
+        margin: 0%;
+        padding: 0%;
+      }
+      body::-webkit-scrollbar {
+        width: 1px;
+      }
+
+      body::-webkit-scrollbar-track {
+        background-color: #000000;
+        border-radius: 100px;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: rgb(27, 255, 73);
+        border-radius: 100px;
+      }
+      /*nav */
+      header {
+        padding: 1.7rem 1rem;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        max-width: 100%;
+        align-items: center;
+        background-color: transparent;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        z-index: 99;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 800;
+      }
+
+      .logo a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.97rem;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+        padding: 1rem;
+        padding: 0.4rem 1rem;
+      }
+
+      nav a:active,
+      nav a:hover {
+        color: rgb(27, 255, 73);
+        border-radius: 1rem;
+        transition: all.3s ease-in-out;
+      }
+
+      #click {
+        display: none;
+      }
+
+      .menu i {
+        color: rgb(27, 255, 73);
+      }
+
+      .menu {
+        display: none;
+      }
+
+      /* home container */
+      .home_container {
+        margin-top: 10px;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .home_container .Details_Container {
+        text-align: center;
+      }
+      .home_container .Details_Container h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        animation: check 3s ease forwards;
+        animation-delay: 0.1s;
+      }
+      .home_container .Details_Container h1 > span {
+        font-size: 2rem;
+      }
+      .home_container .Details_Container .social {
+        display: flex;
+        justify-content: center;
+        gap: 1.4rem;
+        margin-top: 1.7rem;
+      }
+      .social a {
+        color: rgb(27, 255, 73);
+        font-size: 1rem;
+        border: 2px solid rgb(27, 255, 73);
+        border-radius: 50%;
+        padding: 0.35rem;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .social a i {
+        font-size: 1.9rem;
+        padding: 0%;
+        margin: 0%;
+      }
+
+      .social a:hover {
+        color: #1f252e;
+        background-color: rgb(27, 255, 73);
+        box-shadow: 0 0 20px rgb(27, 255, 73);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .home_container .image_Container {
+        border-top: solid 2px rgb(27, 255, 73);
+        border-bottom: solid 2px rgb(27, 255, 73);
+      }
+      .home_container .image_Container > div {
+        background-image: url(./assets/images/blob.svg);
+        height: 400px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+      }
+      .home_container .image_Container > div img {
+        animation: img 3s backwards;
+        animation-delay: 0.1s;
+
+        filter: drop-shadow(-3px -3px rgb(27, 255, 73));
+      }
+      .skill_container{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .skill_container .devs{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .skill_container .devs div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .skill_container .devs div:hover{
+        color: #1f252e;
+        background-color: rgb(27, 255, 73);
+        box-shadow: 0 0 20px rgb(27, 255, 73);
+        transition: all 0.3s ease-in-out;
+      }
+
+
+      @keyframes check {
+        0% {
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes img {
+        0% {
+          transform: translateX(100px);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @media only screen and (max-width: 720px) {
+        .menu {
+          display: block;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #244d61;
+        }
+
+        header {
+          padding: 0.7rem 1rem;
+          align-items: center;
+          max-width: 100%;
+          justify-content: space-between;
+        }
+
+        nav {
+          position: absolute;
+          display: grid;
+          top: 75px;
+          text-align: center;
+          background-color: #0a0e13;
+          left: -100%;
+          z-index: 1;
+          width: 100%;
+          height: 50%;
+        }
+
+        #click:checked ~ nav {
+          left: 0%;
+          top: 50px;
+          transition: all 0.3s ease;
+          height: 50vh;
+        }
+        #click:not(:checked) ~ nav {
+          right: 0%;
+          transition: all 0.3s ease-in-out;
+        }
+        .home_container .Details_Container h1 {
+          font-size: 2rem;
+        }
+        .home_container .Details_Container h1 > span {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="#">nithz.exe</a>
+      </div>
+      <input type="checkbox" id="click" />
+      <label for="click" class="mainicon">
+        <div class="menu">
+          <i class="bi bi-list"></i>
+        </div>
+      </label>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#About">About</a>
+        <a href="#">Skills</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+    <div class="home_container" id="home">
+      <div class="Details_Container">
+        <h1>
+          <span>Hi, It's Me</span> <br />
+          Nithish <span style="color: rgb(27, 255, 73)">Koriyar</span>
+        </h1>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing <br />
+          and typesetting industry.
+        </p>
+        <div class="social">
+          <a href="#"><i class="bi bi-github"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+      <div class="image_Container">
+        <div>
+          <img src="./assets/images/myimg.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="skill_container">
+      <div class="devs">
+        <div class="website">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              id="website"
+            >
+              <path
+                d="M57.334 46.09a28.91 28.91 0 0 0 0-28.18.971.971 0 0 0-.406-.706 29 29 0 1 0 0 29.592.971.971 0 0 0 .406-.706ZM15.38 47h4.579A27.377 27.377 0 0 0 25.1 57.342 22.448 22.448 0 0 1 15.38 47ZM5.025 33h4.994a36.32 36.32 0 0 0 2.324 12h-4a26.807 26.807 0 0 1-3.318-12Zm3.32-14h4a36.32 36.32 0 0 0-2.324 12H5.025a26.807 26.807 0 0 1 3.32-12Zm40.275-2h-4.579A27.377 27.377 0 0 0 38.9 6.658 22.448 22.448 0 0 1 48.62 17Zm10.355 14h-4.994a36.32 36.32 0 0 0-2.324-12h4a26.807 26.807 0 0 1 3.318 12Zm-6.994 0h-5.993a56.232 56.232 0 0 0-1.427-12h4.961a34.255 34.255 0 0 1 2.459 12ZM31 19v12H20.012a53.521 53.521 0 0 1 1.526-12Zm-8.91-2c2-6.586 5.252-11.177 8.91-11.894V17ZM31 33v12h-9.462a53.521 53.521 0 0 1-1.526-12Zm0 14v11.894c-3.658-.717-6.909-5.308-8.91-11.894Zm2-2V33h10.988a53.521 53.521 0 0 1-1.526 12Zm8.91 2c-2 6.586-5.253 11.177-8.91 11.894V47ZM33 31V19h9.462a53.521 53.521 0 0 1 1.526 12Zm0-14V5.106c3.657.717 6.908 5.308 8.91 11.894ZM25.1 6.658A27.377 27.377 0 0 0 19.959 17H15.38A22.448 22.448 0 0 1 25.1 6.658ZM19.438 19a56.234 56.234 0 0 0-1.426 12h-5.993a34.255 34.255 0 0 1 2.458-12Zm-7.419 14h5.993a56.234 56.234 0 0 0 1.426 12h-4.961a34.255 34.255 0 0 1-2.458-12ZM38.9 57.342A27.377 27.377 0 0 0 44.041 47h4.579a22.448 22.448 0 0 1-9.72 10.342ZM44.561 45a56.232 56.232 0 0 0 1.427-12h5.993a34.255 34.255 0 0 1-2.459 12Zm9.42-12h4.994a26.807 26.807 0 0 1-3.32 12h-4a36.32 36.32 0 0 0 2.326-12Zm.456-16h-3.615a27.44 27.44 0 0 0-6.5-9.012A27.187 27.187 0 0 1 54.437 17Zm-34.76-9.012A27.452 27.452 0 0 0 13.178 17H9.563a27.184 27.184 0 0 1 10.114-9.012ZM9.563 47h3.615a27.452 27.452 0 0 0 6.5 9.012A27.184 27.184 0 0 1 9.563 47Zm34.759 9.012a27.44 27.44 0 0 0 6.5-9.012h3.615a27.187 27.187 0 0 1-10.115 9.012Z"
+              ></path>
+            </svg>
+          </div>
+          <span>website</span>
+        </div>
+        <div class="webapps">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              id="website"
+            >
+              <path
+                d="M57.334 46.09a28.91 28.91 0 0 0 0-28.18.971.971 0 0 0-.406-.706 29 29 0 1 0 0 29.592.971.971 0 0 0 .406-.706ZM15.38 47h4.579A27.377 27.377 0 0 0 25.1 57.342 22.448 22.448 0 0 1 15.38 47ZM5.025 33h4.994a36.32 36.32 0 0 0 2.324 12h-4a26.807 26.807 0 0 1-3.318-12Zm3.32-14h4a36.32 36.32 0 0 0-2.324 12H5.025a26.807 26.807 0 0 1 3.32-12Zm40.275-2h-4.579A27.377 27.377 0 0 0 38.9 6.658 22.448 22.448 0 0 1 48.62 17Zm10.355 14h-4.994a36.32 36.32 0 0 0-2.324-12h4a26.807 26.807 0 0 1 3.318 12Zm-6.994 0h-5.993a56.232 56.232 0 0 0-1.427-12h4.961a34.255 34.255 0 0 1 2.459 12ZM31 19v12H20.012a53.521 53.521 0 0 1 1.526-12Zm-8.91-2c2-6.586 5.252-11.177 8.91-11.894V17ZM31 33v12h-9.462a53.521 53.521 0 0 1-1.526-12Zm0 14v11.894c-3.658-.717-6.909-5.308-8.91-11.894Zm2-2V33h10.988a53.521 53.521 0 0 1-1.526 12Zm8.91 2c-2 6.586-5.253 11.177-8.91 11.894V47ZM33 31V19h9.462a53.521 53.521 0 0 1 1.526 12Zm0-14V5.106c3.657.717 6.908 5.308 8.91 11.894ZM25.1 6.658A27.377 27.377 0 0 0 19.959 17H15.38A22.448 22.448 0 0 1 25.1 6.658ZM19.438 19a56.234 56.234 0 0 0-1.426 12h-5.993a34.255 34.255 0 0 1 2.458-12Zm-7.419 14h5.993a56.234 56.234 0 0 0 1.426 12h-4.961a34.255 34.255 0 0 1-2.458-12ZM38.9 57.342A27.377 27.377 0 0 0 44.041 47h4.579a22.448 22.448 0 0 1-9.72 10.342ZM44.561 45a56.232 56.232 0 0 0 1.427-12h5.993a34.255 34.255 0 0 1-2.459 12Zm9.42-12h4.994a26.807 26.807 0 0 1-3.32 12h-4a36.32 36.32 0 0 0 2.326-12Zm.456-16h-3.615a27.44 27.44 0 0 0-6.5-9.012A27.187 27.187 0 0 1 54.437 17Zm-34.76-9.012A27.452 27.452 0 0 0 13.178 17H9.563a27.184 27.184 0 0 1 10.114-9.012ZM9.563 47h3.615a27.452 27.452 0 0 0 6.5 9.012A27.184 27.184 0 0 1 9.563 47Zm34.759 9.012a27.44 27.44 0 0 0 6.5-9.012h3.615a27.187 27.187 0 0 1-10.115 9.012Z"
+              ></path>
+            </svg>
+          </div>
+          <span>webapps</span>
+        </div>
+        <div class="mobile">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              id="website"
+            >
+              <path
+                d="M57.334 46.09a28.91 28.91 0 0 0 0-28.18.971.971 0 0 0-.406-.706 29 29 0 1 0 0 29.592.971.971 0 0 0 .406-.706ZM15.38 47h4.579A27.377 27.377 0 0 0 25.1 57.342 22.448 22.448 0 0 1 15.38 47ZM5.025 33h4.994a36.32 36.32 0 0 0 2.324 12h-4a26.807 26.807 0 0 1-3.318-12Zm3.32-14h4a36.32 36.32 0 0 0-2.324 12H5.025a26.807 26.807 0 0 1 3.32-12Zm40.275-2h-4.579A27.377 27.377 0 0 0 38.9 6.658 22.448 22.448 0 0 1 48.62 17Zm10.355 14h-4.994a36.32 36.32 0 0 0-2.324-12h4a26.807 26.807 0 0 1 3.318 12Zm-6.994 0h-5.993a56.232 56.232 0 0 0-1.427-12h4.961a34.255 34.255 0 0 1 2.459 12ZM31 19v12H20.012a53.521 53.521 0 0 1 1.526-12Zm-8.91-2c2-6.586 5.252-11.177 8.91-11.894V17ZM31 33v12h-9.462a53.521 53.521 0 0 1-1.526-12Zm0 14v11.894c-3.658-.717-6.909-5.308-8.91-11.894Zm2-2V33h10.988a53.521 53.521 0 0 1-1.526 12Zm8.91 2c-2 6.586-5.253 11.177-8.91 11.894V47ZM33 31V19h9.462a53.521 53.521 0 0 1 1.526 12Zm0-14V5.106c3.657.717 6.908 5.308 8.91 11.894ZM25.1 6.658A27.377 27.377 0 0 0 19.959 17H15.38A22.448 22.448 0 0 1 25.1 6.658ZM19.438 19a56.234 56.234 0 0 0-1.426 12h-5.993a34.255 34.255 0 0 1 2.458-12Zm-7.419 14h5.993a56.234 56.234 0 0 0 1.426 12h-4.961a34.255 34.255 0 0 1-2.458-12ZM38.9 57.342A27.377 27.377 0 0 0 44.041 47h4.579a22.448 22.448 0 0 1-9.72 10.342ZM44.561 45a56.232 56.232 0 0 0 1.427-12h5.993a34.255 34.255 0 0 1-2.459 12Zm9.42-12h4.994a26.807 26.807 0 0 1-3.32 12h-4a36.32 36.32 0 0 0 2.326-12Zm.456-16h-3.615a27.44 27.44 0 0 0-6.5-9.012A27.187 27.187 0 0 1 54.437 17Zm-34.76-9.012A27.452 27.452 0 0 0 13.178 17H9.563a27.184 27.184 0 0 1 10.114-9.012ZM9.563 47h3.615a27.452 27.452 0 0 0 6.5 9.012A27.184 27.184 0 0 1 9.563 47Zm34.759 9.012a27.44 27.44 0 0 0 6.5-9.012h3.615a27.187 27.187 0 0 1-10.115 9.012Z"
+              ></path>
+            </svg>
+          </div>
+          <span>webapps</span>
+        </div>
+        <div class="ios">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              id="website"
+            >
+              <path
+                d="M57.334 46.09a28.91 28.91 0 0 0 0-28.18.971.971 0 0 0-.406-.706 29 29 0 1 0 0 29.592.971.971 0 0 0 .406-.706ZM15.38 47h4.579A27.377 27.377 0 0 0 25.1 57.342 22.448 22.448 0 0 1 15.38 47ZM5.025 33h4.994a36.32 36.32 0 0 0 2.324 12h-4a26.807 26.807 0 0 1-3.318-12Zm3.32-14h4a36.32 36.32 0 0 0-2.324 12H5.025a26.807 26.807 0 0 1 3.32-12Zm40.275-2h-4.579A27.377 27.377 0 0 0 38.9 6.658 22.448 22.448 0 0 1 48.62 17Zm10.355 14h-4.994a36.32 36.32 0 0 0-2.324-12h4a26.807 26.807 0 0 1 3.318 12Zm-6.994 0h-5.993a56.232 56.232 0 0 0-1.427-12h4.961a34.255 34.255 0 0 1 2.459 12ZM31 19v12H20.012a53.521 53.521 0 0 1 1.526-12Zm-8.91-2c2-6.586 5.252-11.177 8.91-11.894V17ZM31 33v12h-9.462a53.521 53.521 0 0 1-1.526-12Zm0 14v11.894c-3.658-.717-6.909-5.308-8.91-11.894Zm2-2V33h10.988a53.521 53.521 0 0 1-1.526 12Zm8.91 2c-2 6.586-5.253 11.177-8.91 11.894V47ZM33 31V19h9.462a53.521 53.521 0 0 1 1.526 12Zm0-14V5.106c3.657.717 6.908 5.308 8.91 11.894ZM25.1 6.658A27.377 27.377 0 0 0 19.959 17H15.38A22.448 22.448 0 0 1 25.1 6.658ZM19.438 19a56.234 56.234 0 0 0-1.426 12h-5.993a34.255 34.255 0 0 1 2.458-12Zm-7.419 14h5.993a56.234 56.234 0 0 0 1.426 12h-4.961a34.255 34.255 0 0 1-2.458-12ZM38.9 57.342A27.377 27.377 0 0 0 44.041 47h4.579a22.448 22.448 0 0 1-9.72 10.342ZM44.561 45a56.232 56.232 0 0 0 1.427-12h5.993a34.255 34.255 0 0 1-2.459 12Zm9.42-12h4.994a26.807 26.807 0 0 1-3.32 12h-4a36.32 36.32 0 0 0 2.326-12Zm.456-16h-3.615a27.44 27.44 0 0 0-6.5-9.012A27.187 27.187 0 0 1 54.437 17Zm-34.76-9.012A27.452 27.452 0 0 0 13.178 17H9.563a27.184 27.184 0 0 1 10.114-9.012ZM9.563 47h3.615a27.452 27.452 0 0 0 6.5 9.012A27.184 27.184 0 0 1 9.563 47Zm34.759 9.012a27.44 27.44 0 0 0 6.5-9.012h3.615a27.187 27.187 0 0 1-10.115 9.012Z"
+              ></path>
+            </svg>
+          </div>
+          <span>webapps</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
