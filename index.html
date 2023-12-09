@@ -205,13 +205,12 @@
       .skill_container .lang_knows img {
         filter: drop-shadow(0px 0px 30px rgb(27, 255, 73));
       }
-      .p_container{
-
+      .p_container {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-
+        color: #000000;
       }
       .p_container .p_container_name {
         margin: 10px;
@@ -233,23 +232,68 @@
         height: 200px;
       }
 
-      .projects{
+      .projects {
         background-color: rgb(27, 255, 73);
         padding: 10px;
         width: 300px;
         height: 220px;
         overflow: hidden;
         transition: all 0.2s ease-in-out;
-        
       }
-      .projects:hover{
-        height:300px;
+      .projects p {
+        text-align: center;
+        font-weight: 600;
+      }
+      .projects:hover {
+        height: 300px;
 
         box-shadow: 0 0 20px rgb(27, 255, 73);
         transition: all 0.2s ease-in-out;
-
-        
       }
+      .contactMe_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .contactMe_container div {
+      }
+      .contactMe_container button {
+        font-size: 30px;
+        padding: 50px;
+        box-shadow: 0 0 20px rgb(27, 255, 73);
+        background-color: rgb(27, 255, 73);
+        border: none;
+
+        animation: wiggle 2s linear infinite;
+      }
+
+
+/* Keyframes */
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
 
 
       @keyframes check {
@@ -418,7 +462,7 @@
         <div class="pro1 projects">
           <div class="pro1_img projectImg">
             <img src="./assets/images/webapp.png" alt="" srcset="" />
-            <center>webapps</center>
+            <center>Business Website</center>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
@@ -428,7 +472,7 @@
         <div class="pro2 projects">
           <div class="pro2_img projectImg">
             <img src="./assets/images/webapp.png" alt="" srcset="" />
-            <center>webapps</center>
+            <center>E-Commerce Webapp</center>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
@@ -438,7 +482,7 @@
         <div class="pro3 projects">
           <div class="pro3_img projectImg">
             <img src="./assets/images/webapp.png" alt="" srcset="" />
-            <center>webapps</center>
+            <center>E-Commerce App</center>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
@@ -448,7 +492,9 @@
       </div>
     </div>
     <div class="contactMe_container">
-      
+      <div>
+        <button>Contact Me</button>
+      </div>
     </div>
   </body>
 </html>
