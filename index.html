@@ -37,6 +37,7 @@
       }
       /*nav */
       header {
+        backdrop-filter: blur(5px);
         padding: 1.7rem 1rem;
         background-color: #fff;
         display: flex;
@@ -75,7 +76,7 @@
       nav a:hover {
         color: rgb(27, 255, 73);
         border-radius: 1rem;
-        transition: all.3s ease-in-out;
+        transition: all 3s ease-in-out;
       }
 
       #click {
@@ -161,11 +162,12 @@
         filter: drop-shadow(-3px -3px rgb(27, 255, 73));
       }
       .skill_container {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        gap: 50px;
       }
       .skill_container center {
         margin: 20px;
@@ -200,11 +202,54 @@
         justify-content: center;
         gap: 10px;
       }
-      .skill_container .lang_knows img{
-        filter: drop-shadow(0px 0px 30px  rgb(27, 255, 73));
-        
+      .skill_container .lang_knows img {
+        filter: drop-shadow(0px 0px 30px rgb(27, 255, 73));
+      }
+      .p_container{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+      }
+      .p_container center {
+        margin: 10px;
+        font-size: 40px;
+        font-weight: 600;
+        color: rgb(27, 255, 73);
+        text-shadow: 0 0 20px rgb(27, 255, 73);
+      }
+      .project_container {
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .project_container img {
+        width: 300px;
+        height: 200px;
+      }
+      .projects{
+        background-color: rgb(27, 255, 73);
+        padding: 10px;
+        width: 300px;
+        height: 220px;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
         
       }
+      .projects:hover{
+        height:300px;
+        
+        box-shadow: 0 0 20px rgb(27, 255, 73);
+        transition: all 0.2s ease-in-out;
+
+        
+      }
+
 
       @keyframes check {
         0% {
@@ -293,9 +338,8 @@
       </label>
       <nav>
         <a href="#home">Home</a>
-        <a href="#About">About</a>
         <a href="#skills">Skills</a>
-        <a href="#">Portfolio</a>
+        <a href="#Projects">Projects</a>
         <a href="#">Contact</a>
       </nav>
     </header>
@@ -355,17 +399,51 @@
         </div>
       </div>
       <div class="lang_knows">
-        <img src="./assets/images/icons8-html5-64.png" alt="">
-        <img src="./assets/images/icons8-css-64.png" alt="">
-        <img src="./assets/images/icons8-js-64.png" alt="">
-        <img src="./assets/images/icons8-php-64.png" alt="">
-        <img src="./assets/images/icons8-node-js-64.png" alt="">
-        <img src="./assets/images/icons8-express-js-64.png" alt="">
-        <img src="./assets/images/icons8-flutter-64.png" alt="">
-        <img src="./assets/images/icons8-dart-64.png" alt="">
-        <img src="./assets/images/icons8-rest-api-64.png" alt="">
-        <img src="./assets/images/icons8-my-sql-64.png" alt="">
-
+        <img src="./assets/images/icons8-html5-64.png" alt="" />
+        <img src="./assets/images/icons8-css-64.png" alt="" />
+        <img src="./assets/images/icons8-js-64.png" alt="" />
+        <img src="./assets/images/icons8-php-64.png" alt="" />
+        <img src="./assets/images/icons8-node-js-64.png" alt="" />
+        <img src="./assets/images/icons8-express-js-64.png" alt="" />
+        <img src="./assets/images/icons8-flutter-64.png" alt="" />
+        <img src="./assets/images/icons8-dart-64.png" alt="" />
+        <img src="./assets/images/icons8-rest-api-64.png" alt="" />
+        <img src="./assets/images/icons8-my-sql-64.png" alt="" />
+      </div>
+    </div>
+    <div class="p_container">
+      <center>Projects</center>
+      <div class="project_container" id="Projects">
+        <div class="pro1 projects">
+          <div class="pro1_img projectImg">
+            <img src="./assets/images/webapp.png" alt="" srcset="" />
+            <center>webapps</center>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+          </div>
+        </div>
+        <div class="pro2 projects">
+          <div class="pro2_img projectImg">
+            <img src="./assets/images/webapp.png" alt="" srcset="" />
+            <center>webapps</center>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+          </div>
+        </div>
+        <div class="pro3 projects">
+          <div class="pro3_img projectImg">
+            <img src="./assets/images/webapp.png" alt="" srcset="" />
+            <center>webapps</center>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
