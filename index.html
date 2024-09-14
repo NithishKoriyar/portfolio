@@ -22,6 +22,7 @@
         margin: 0%;
         user-select: none;
         padding: 0%;
+        box-sizing: border-box;
       }
       body::-webkit-scrollbar {
         width: 1px;
@@ -30,10 +31,10 @@
       body::-webkit-scrollbar-track {
         background-color: #000000;
         border-radius: 100px;
-        width: 400vh ;
+        width: 400vh;
         overflow: scroll;
         scroll-snap-type: mandatory;
-        scroll-snap-align:center ;
+        scroll-snap-align: center;
       }
 
       body::-webkit-scrollbar-thumb {
@@ -99,11 +100,12 @@
       /* home container */
       .home_container {
         margin-top: 10px;
-        height: 100vh;
-        display: flex;
+        padding-top: 10px;
+        height: 100vh;        display: flex;
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
+        
       }
       .home_container .Details_Container {
         text-align: center;
@@ -168,10 +170,15 @@
       }
       .skill_container {
         min-height: 100vh;
+        
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        animation: slide 20s linear forwards;
+            opacity: 0%;
+            animation-timeline: view(300px);
+            animation-range: entry;
         gap: 50px;
       }
       .skill_container center {
@@ -188,7 +195,7 @@
         flex-wrap: wrap;
         gap: 10px;
       }
-      .skill_container .devs div {
+      .skill_container .devs > div {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -198,7 +205,7 @@
         font-weight: 600;
         color: #1f252e;
         background-color: rgb(27, 255, 73);
-        box-shadow: 0 0 20px rgb(27, 255, 73);
+        gap: 5px;
       }
       .skill_container .lang_knows {
         margin-top: 2%;
@@ -216,6 +223,10 @@
         justify-content: center;
         flex-direction: column;
         color: #000000;
+        animation: slide 20s linear forwards;
+            opacity: 0%;
+            animation-timeline: view(300px);
+            animation-range: entry;
       }
       .p_container .p_container_name {
         margin: 10px;
@@ -232,9 +243,17 @@
         flex-wrap: wrap;
         gap: 10px;
       }
-      .project_container img {
-        width: 300px;
-        height: 200px;
+   
+      .lang_knows ul {
+        text-align: center;
+        margin: 0%;
+        padding: 0%;
+      }
+      .lang_knows ul li{
+        list-style: none;
+        color: rgb(27, 255, 73);
+        line-height: 2;
+        text-shadow: 0 0 20px rgb(27, 255, 73);
       }
 
       .projects {
@@ -244,6 +263,7 @@
         height: 220px;
         overflow: hidden;
         transition: all 0.2s ease-in-out;
+        color: #000000;
       }
       .projects p {
         text-align: center;
@@ -253,52 +273,106 @@
         height: 300px;
 
         box-shadow: 0 0 20px rgb(27, 255, 73);
-        transition: all 0.2s ease-in-out;
       }
       .contactMe_container {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
+        animation: slide 20s linear forwards;
+            opacity: 0%;
+            animation-timeline: view(300px);
+            animation-range: entry;
       }
-    
+
       .contactMe_container button {
         font-size: 30px;
         padding: 50px;
         box-shadow: 0 0 20px rgb(27, 255, 73);
         background-color: rgb(27, 255, 73);
         border: none;
-
-        animation: wiggle 2s linear infinite;
+        border-radius: 19px;
+        color: #fff;
+      }
+      .project_container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
       }
 
+      .project_container div {
+        background-color:rgb(27, 255, 73);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-/* Keyframes */
-@keyframes wiggle {
-  0%, 7% {
-    transform: rotateZ(0);
-  }
-  15% {
-    transform: rotateZ(-15deg);
-  }
-  20% {
-    transform: rotateZ(10deg);
-  }
-  25% {
-    transform: rotateZ(-10deg);
-  }
-  30% {
-    transform: rotateZ(6deg);
-  }
-  35% {
-    transform: rotateZ(-4deg);
-  }
-  40%, 100% {
-    transform: rotateZ(0);
-  }
-}
+      .project_container div:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
 
+      .project_container center {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #27ae60;
+        margin-bottom: 1rem;
+      }
 
+      .project_container p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #555;
+      }
+
+      .project_container p span {
+        font-weight: bold;
+      }
+
+      @media screen and (max-width: 768px) {
+        .project_container {
+          grid-template-columns: 1fr;
+        }
+      }
+     
+      @keyframes slide{
+            to{
+                opacity: 100%;
+                color: blue;
+            }
+
+        }
+
+      /* Keyframes */
+      @keyframes wiggle {
+        0%,
+        7% {
+          transform: rotateZ(0);
+        }
+        15% {
+          transform: rotateZ(-15deg);
+        }
+        20% {
+          transform: rotateZ(10deg);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        30% {
+          transform: rotateZ(6deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        40%,
+        100% {
+          transform: rotateZ(0);
+        }
+      }
 
       @keyframes check {
         0% {
@@ -365,6 +439,9 @@
         .home_container .Details_Container h1 > span {
           font-size: 1.5rem;
         }
+        .skill_container{
+          padding-top: 40px;
+        }
       }
       @media only screen and (max-width: 440px) {
         .home_container .image_Container > div {
@@ -389,23 +466,29 @@
         <a href="#home">Home</a>
         <a href="#skills">Skills</a>
         <a href="#Projects">Projects</a>
-        <a href="#">Contact</a>
+        <a href="#Contact">Contact</a>
       </nav>
     </header>
     <div class="home_container" id="home">
       <div class="Details_Container">
         <h1>
           <span>Hi, It's Me</span> <br />
-          Nithish <span style="color: rgb(27, 255, 73)">Koriyar</span>
+           <span style="color: rgb(27, 255, 73)">Nithish Koriyar</span>
         </h1>
         <p>
-         Full-stack Developer<br />
-          And <br>
-          Android Development
+          Full Stack Developer<br />
+          Building dynamic web and mobile applications <br> using React, React Native, Node.js, and Express.
+        </p>
+
+        <p style="min-width: 200px; max-width: 500px;padding: 10px;line-height: 2">
+          <span style="color: rgb(27, 255, 73)">About Me</span> <br>
+          I'm a Full Stack Developer with 2 years of hands-on experience building scalable web and mobile applications. Proficient in React, React Native, Node.js, and Express.js. Skilled at creating efficient and user-friendly solutions using MySQL, MongoDB, and REST APIs.
         </p>
         <div class="social">
-          <a href="https://github.com/NithishKoriyar"><i class="bi bi-github"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/NithishKoriyar"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/nithish-569081228/"><i class="bi bi-linkedin"></i></a>
           <a href="#"><i class="bi bi-youtube"></i></a>
         </div>
       </div>
@@ -448,56 +531,44 @@
         </div>
       </div>
       <div class="lang_knows">
-        <img src="./assets/images/icons8-html5-64.png" alt="" />
-        <img src="./assets/images/icons8-css-64.png" alt="" />
-        <img src="./assets/images/icons8-js-64.png" alt="" />
-        <img src="./assets/images/icons8-php-64.png" alt="" />
-        <img src="./assets/images/icons8-node-js-64.png" alt="" />
-        <img src="./assets/images/icons8-express-js-64.png" alt="" />
-        <img src="./assets/images/icons8-flutter-64.png" alt="" />
-        <img src="./assets/images/icons8-dart-64.png" alt="" />
-        <img src="./assets/images/icons8-rest-api-64.png" alt="" />
-        <img src="./assets/images/icons8-my-sql-64.png" alt="" />
-      </div>
+       <ul>
+        <li>
+        Frontend: React.js, React Native</li>
+<li>Backend: Node.js, Express.js, REST API development</li>
+<li>Databases: MySQL, MongoDB</li>
+<li>Tools: Git, GitHub, Socket.IO</li>
+<li>Security: JWT Authentication</li>
+       </ul>
     </div>
     <div class="p_container">
       <center class="p_container_name">Projects</center>
       <div class="project_container" id="Projects">
-        <div class="pro1 projects">
-          <div class="pro1_img projectImg">
-            <img src="./assets/images/webapp.png" alt="" srcset="" />
-            <center>Business Website</center>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-          </div>
+        <div>
+          <center>ALCO – Product Viewing and WhatsApp Ordering Website</center>
+          <p>
+            A web platform for viewing products and directly contacting sellers
+            through WhatsApp.<br /><br />
+            <span>Technologies:</span> React.js, Node.js, MySQL, WhatsApp API<br />
+            <span>Role:</span> Full Stack Developer – Developed both frontend and
+            backend.
+          </p>
         </div>
-        <div class="pro2 projects">
-          <div class="pro2_img projectImg">
-            <img src="./assets/images/webapp.png" alt="" srcset="" />
-            <center>E-Commerce Webapp</center>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-          </div>
-        </div>
-        <div class="pro3 projects">
-          <div class="pro3_img projectImg">
-            <img src="./assets/images/webapp.png" alt="" srcset="" />
-            <center>E-Commerce App</center>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-          </div>
+        <div>
+          <center>FinTrack – Income and Expense Tracker App</center>
+          <p>
+            A mobile app for tracking income and expenses, with reports for top
+            expenses and income.<br /><br />
+            <span>Technologies:</span> Expo, React Native, Node.js, MySQL<br />
+            <span>Role:</span> Full Stack Developer – Built the frontend and
+            backend, utilizing ChatGPT for architectural guidance.
+          </p>
         </div>
       </div>
-    </div>
-    <div class="contactMe_container">
-      <a href="mailto:nithishk6765@gmail.com">
 
+      </div>
+    </div>
+    <div class="contactMe_container" id="Contact">
+      <a href="mailto:nithishk6765@gmail.com">
         <button>Contact Me</button>
       </a>
     </div>
